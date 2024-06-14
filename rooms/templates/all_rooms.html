@@ -1,0 +1,16 @@
+<h3>{{title}}</h3>
+
+<ul>
+    <!-- 받은 room list 들 모두 출력 -->
+  {% for room in rooms %}
+  <li>
+    <a href="/rooms/{{room.pk}}">
+      {{room.name}}<br />
+      <!-- room에 해당하는 amenity 모두 출력 -->
+      {% for amenity in room.amenities.all %}
+      <span>-{{amenity.name}}<br /></span>
+      {% endfor%}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
